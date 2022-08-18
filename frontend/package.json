@@ -5,9 +5,11 @@
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=3000 npx serve",
-    "start": "webpack serve --open --mode development",
+    "start": "webpack serve --open --mode development -p 8080",
     "start:live": "webpack serve --open --mode development --live-reload --hot",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "gcp-build": "npm run build",
+    "deploy": "gcloud config set project api-finnhub && gcloud app deploy app.yaml --version=0-1-0"
   },
   "eslintConfig": {
     "extends": [

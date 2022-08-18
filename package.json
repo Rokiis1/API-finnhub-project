@@ -1,0 +1,18 @@
+{
+  "name": "packages",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run start:live",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  }
+}

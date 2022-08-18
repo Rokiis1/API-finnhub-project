@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Loading from "../components/utils/Loading";
@@ -64,10 +64,12 @@ const SymbolProfile = ({ match }) => {
     return <Loading />;
   } else if (!profile.name) {
     return (
-      <div>
-        <Link to="/">Back To Search</Link>
+      <Container>
+        <Button variant="contained">
+          <Link to="/">Back To Search</Link>
+        </Button>
         <h1>Result Not Found</h1>
-      </div>
+      </Container>
     );
   } else {
     return (
